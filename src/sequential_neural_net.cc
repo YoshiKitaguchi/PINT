@@ -144,7 +144,7 @@ vector<PTensor*> SequentialNet::backwardProp(PTensor * expectedOutput, double lr
     return layerAdjustments;
 }
 
-void SequentialNet::train(PTensor* inputs, PTensor* expectedOutputs, int epochs, int mbs, double lr)
+void SequentialNet::train(PTensor* inputs, PTensor* expectedOutputs, int epochs, int mbs, double lr) // mbs = batch size, lr = learning rate
 {
     if (inputs->_shape[1] != expectedOutputs->_shape[1])
     {

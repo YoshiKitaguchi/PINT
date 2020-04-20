@@ -7,6 +7,7 @@
 #include <iomanip>
 #include <vector>
 #include <cmath>
+#include <string>
 
 #include "ptensor.h"
 #include "opnode.h"
@@ -14,5 +15,6 @@
 #include "utils.h"
 #include "sequential_neural_net.h"
 #include "nonsequential_neural_net.h"
+#include "cnn.h"
 
 #endif
