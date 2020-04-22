@@ -1,7 +1,7 @@
 #include "pint.h"
 #include <iostream>
 #include <algorithm>
-#include "ptensor.h"
+#include "pint.h"
 
 namespace pint
 {
@@ -45,7 +45,7 @@ namespace pint
         shape[0] = size;
         shape[1] = size;
         shape[2] = 1;
-        PTensor * patch = new Ptensor(3, shape);
+        PTensor * patch = new PTensor(3, shape);
 
         for (int i = 0; i < row; i++)
         {
@@ -82,13 +82,14 @@ namespace pint
         shape[0] = rowLayer - filterSize + 1;
         shape[1] = colLayer - filterSize + 1;
         shape[2] = 1;
-        PTensor * activationMap = new Ptensor(3, shape);
+        PTensor * activationMap = new PTensor(3, shape);
         for (int i = 0; i < shape[0]; i++) 
         {
             for (int j = 0; j < shape[1]; j++)
             {
-                PTensor * patch = getPatch(layer, i, j, row);
-                activationMap->at(i, j) = summation(dot(patch, this->convLayer));
+                PTensor * patch = getPatch(layer, i, j, filterSize);
+                PTensor temp = dot(*patch, *(this->convLayer));
+                activationMap->at(i, j) = summation(&temp);
             }
         }
 

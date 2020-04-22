@@ -1,8 +1,6 @@
 #ifndef CNN_H
 #define CNN_H
 
-#include "pint.h"
-
 using namespace std;
 
 namespace pint
@@ -15,10 +13,11 @@ namespace pint
             string pooling;
         public:
             ConvolutionalNet();
-
-
-    }
-
+            ~ConvolutionalNet();
+            PTensor * getPatch (PTensor * layer, int row, int col, int size);
+            double summation (PTensor *);
+            PTensor * convolution(PTensor * layer, string activation);
+    };
 
 }
 
