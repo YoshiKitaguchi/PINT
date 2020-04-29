@@ -15,3 +15,5 @@ make
 - Viswajeeet Balaji
 - Sri Cherukuri
 - Anthony Niemiec
+- Yoshimasa Kitaguchi
+- Trevor Bagwell
